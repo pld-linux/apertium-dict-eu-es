@@ -2,14 +2,13 @@ Summary:	Basque-Spanish language pair for Apertium
 Summary(pl.UTF-8):	Para języków baskijski-hiszpański dla Apertium
 %define	lpair	eu-es
 Name:		apertium-dict-%{lpair}
-Version:	0.3.1
+Version:	0.3.2
 Release:	1
 License:	GPL v2+
 Group:		Applications/Text
 Source0:	http://downloads.sourceforge.net/apertium/apertium-%{lpair}-%{version}.tar.gz
-# Source0-md5:	990cbc06d639d7e1ecda0132405fe07a
+# Source0-md5:	08101bf01c3f37bd92746f967bf5181f
 Patch0:		%{name}-DESTDIR.patch
-Patch1:		%{name}-apertium32.patch
 URL:		http://www.apertium.org/
 BuildRequires:	apertium-devel >= 3.2.0
 BuildRequires:	autoconf >= 2.52
@@ -33,7 +32,6 @@ oznaczania części mowy w obu językach.
 %prep
 %setup -q -n apertium-%{lpair}-%{version}
 %patch0 -p1
-%patch1 -p1
 
 %build
 %{__aclocal}
