@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Para języków baskijski-hiszpański dla Apertium
 %define	lpair	eu-es
 Name:		apertium-dict-%{lpair}
 Version:	0.3.3
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/Text
 Source0:	http://downloads.sourceforge.net/apertium/apertium-%{lpair}-%{version}.tar.gz
