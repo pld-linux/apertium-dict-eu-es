@@ -2,21 +2,18 @@ Summary:	Basque-Spanish language pair for Apertium
 Summary(pl.UTF-8):	Para języków baskijski-hiszpański dla Apertium
 %define	lpair	eu-es
 Name:		apertium-dict-%{lpair}
-Version:	0.3.3
-Release:	2
+Version:	0.3.4
+Release:	1
 License:	GPL v2+
 Group:		Applications/Text
-Source0:	http://downloads.sourceforge.net/apertium/apertium-%{lpair}-%{version}.tar.gz
-# Source0-md5:	4731f0cad632960595d285984a90110a
-Patch0:		%{name}-DESTDIR.patch
-URL:		http://www.apertium.org/
-BuildRequires:	apertium-devel >= 3.2.0
+Source0:	https://github.com/apertium/apertium-%{lpair}/archive/v%{version}/apertium-%{lpair}-%{version}.tar.gz
+# Source0-md5:	36fa999f0606800b78d6a80a5693fda8
+URL:		https://www.apertium.org/
+BuildRequires:	apertium-devel >= 3.7.0
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake
-BuildRequires:	libxslt-progs
-BuildRequires:	lttoolbox >= 3.2.0
 BuildRequires:	pkgconfig
-Requires:	apertium >= 3.2.0
+Requires:	apertium >= 3.7.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -31,7 +28,6 @@ oznaczania części mowy w obu językach.
 
 %prep
 %setup -q -n apertium-%{lpair}-%{version}
-%patch -P0 -p1
 
 %build
 %{__aclocal}
@@ -44,7 +40,6 @@ oznaczania części mowy w obu językach.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_datadir}/apertium/modes
 
 %{__make} -j1 install \
 	DESTDIR=$RPM_BUILD_ROOT
